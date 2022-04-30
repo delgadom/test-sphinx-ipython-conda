@@ -9,6 +9,6 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install git
       - run: git clone https://github.com/pydata/xarray.git
       - run: cd xarray
-      - run: source ~/.bashrc && mamba env create -f ci/requirements/doc.yml
+      - run: source ~/.bashrc && ./bin/micromamba env create -f ci/requirements/doc.yml
       - run: cd doc
       - run: source ~/.bashrc && conda activate xarray-docs && make html
