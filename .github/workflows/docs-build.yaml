@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
       - run: ./bin/micromamba shell init -s bash -p ~/micromamba
-      - run: apt-get update && apt-get install git
+      - run: sudo apt-get update && sudo apt-get install git
       - run: git clone git@github.com:pydata/xarray.git
       - run: cd xarray
       - run: source ~/.bashrc && mamba env create -f ci/requirements/doc.yml
